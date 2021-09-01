@@ -130,11 +130,13 @@ module.exports = class Care {
         let response = await fetch(new URL('https://www.depisoenpiso.com/old_root/php/controllers/test.php'), {
           method: "GET"
         });
+
+        console.log(response);
         
         response = Response.genGenericTemplate('https://images.typeform.com/images/MHeBtBKJUm9L/background/large', 'Publica una habitación', '', [{
           "type":"web_url",
           "url":"https://depisenpis.typeform.com/to/sncMnwmc?igsid=" + this.user.igsid,
-          "title":"Publica ya" + response
+          "title":"Publica ya" + JSON.stringify(response)
         }])
       break;
     }

@@ -94,6 +94,9 @@ module.exports = class Receive {
     } else if (message.includes("ofrezco piso entero")) {
       let care = new Care(this.user, this.webhookEvent);
       response = care.handlePayload("CARE_PUBLISH");
+    } else if (message.includes("ayuda")) {
+      let care = new Care(this.user, this.webhookEvent);
+      response = care.handlePayload("care_help");
     }
     
     // FB THINGS

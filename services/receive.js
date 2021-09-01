@@ -85,6 +85,9 @@ module.exports = class Receive {
 
     if (message.includes("start over") || message.includes("get started")) {
       response = Response.genNuxMessage(this.user);
+    } else if (message.includes("publicar")) {
+      let care = new Care(this.user, this.webhookEvent);
+      response = care.handlePayload("CARE_PUBLISH");
     } else if (Number(message)) {
       // Assume numeric input ("123") to be an order number
       response = Order.handlePayload("ORDER_NUMBER");

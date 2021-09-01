@@ -14,7 +14,7 @@
 		"post": "Thanks for liking our post! This is as far as the demo goes. In a production experience, this message would come from a human agent. See https://fb.me/get-sample-oc-ig to learn how to build a similar experience."
 	},
 	"get_started": {
-		"welcome": "Hi {{userName}}! Welcome to Original Coast Clothing where you'll find styles for every occasion.",
+		"welcome": "Hi {{userName}}! Welcome to De Pis en Pis Vic where you'll find best rooms to life in Vic.",
 		"guidance": "At any time, use the menu below to navigate through the features",
 		"help": "What we can do to help you today?"
 	},

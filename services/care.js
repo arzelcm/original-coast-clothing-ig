@@ -109,7 +109,11 @@ module.exports = class Care {
             userName: this.user.name
           }),
           [
-            
+            {
+              title: "Publica",
+              type: "web_url",
+              url: "https://www.depisoenpiso.com"
+            },
             {
               title: i18n.__("care.billing"),
               payload: "CARE_BILLING"

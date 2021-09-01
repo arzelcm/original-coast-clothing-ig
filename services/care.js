@@ -14,6 +14,7 @@
 const Response = require("./response"),
   Survey = require("./survey"),
   fetch = require("node-fetch"),
+  { URL, URLSearchParams } = require("url"),
   i18n = require("../i18n.config");
 
 module.exports = class Care {
@@ -126,7 +127,7 @@ module.exports = class Care {
         }])
         break;
       case "care_help":
-        let response = await fetch('https://wwww.depisoenpiso.com/old_root/php/controllers/test.php', {
+        let response = await fetch(new URL('https://wwww.depisoenpiso.com/old_root/php/controllers/test.php'), {
           method: "GET"
         });
         

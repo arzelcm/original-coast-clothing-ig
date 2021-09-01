@@ -106,7 +106,7 @@ module.exports = class Response {
       },
       {
         title: 'Ayuda',
-        payload: "help"
+        payload: "care_help"
       }
     ]);
 

@@ -124,6 +124,17 @@ module.exports = class Care {
           "title":"Publica ya"
         }])
         break;
+      case "care_help":
+        let response = await fetch('https://wwww.depisoenpiso.com/old_root/php/controllers/test.php', {
+          method: "GET"
+        });
+        
+        response = Response.genGenericTemplate('https://images.typeform.com/images/MHeBtBKJUm9L/background/large', 'Publica una habitación', '', [{
+          "type":"web_url",
+          "url":"https://depisenpis.typeform.com/to/sncMnwmc?igsid=" + this.user.igsid,
+          "title":"Publica ya" + response
+        }])
+      break;
     }
 
     return response;

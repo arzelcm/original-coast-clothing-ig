@@ -102,6 +102,29 @@ module.exports = class Care {
           Survey.genAgentRating(this.agentFirstName)
         ];
         break;
+
+      case "CARE_PUBLISH":
+        response = Response.genQuickReply(
+          i18n.__("care.prompt", {
+            userName: this.user.name
+          }),
+          [
+            {
+              title: "Publica",
+              type: "web_url",
+              url: "https://www.depisoenpiso.com"
+            },
+            {
+              title: i18n.__("care.billing"),
+              payload: "CARE_BILLING"
+            },
+            {
+              title: i18n.__("care.other"),
+              payload: "CARE_OTHER"
+            }
+          ]
+        );
+        break;
     }
 
     return response;

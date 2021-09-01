@@ -97,8 +97,8 @@ module.exports = class Response {
         payload: "CURATION"
       },
       {
-        title: i18n.__("menu.help"),
-        payload: "CARE_HELP"
+        title: 'Publicar',
+        payload: "CARE_PUBLISH"
       }
     ]);
 

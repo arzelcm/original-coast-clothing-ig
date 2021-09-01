@@ -15,8 +15,8 @@
 	},
 	"get_started": {
 		"welcome": "Hi {{userName}}! I'm Pisito and I can help you finding your dreams' room on Vic.",
-		"guidance": "At any time, use the menu below to navigate through the features",
-		"help": "What we can do to help you today?"
+		"guidance": "At any time, you can use the menu below to choose any option",
+		"help": "What we can I do to help you today?"
 	},
 	"curation": {
 		"prompt": "Hello {{userName}}, we have some exciting new products out, which product line do you want to learn more about?",

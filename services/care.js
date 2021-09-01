@@ -104,9 +104,9 @@ module.exports = class Care {
         break;
 
       case "CARE_PUBLISH":
-        response = Response.genGenericTemplate('https://www.depisoenpiso.com/new-assets/img/logo-fill.svg', 'Publica una habitación', '', [{
+        response = Response.genGenericTemplate('https://www.depisoenpiso.com/new-assets/img/bg-alojamiento.jpg', 'Publica una habitación', '', [{
           "type":"web_url",
-          "url":"https://www.depisoenpiso.com/publicar-anuncio.html?igsid=" + this.user.igsid,
+          "url":"https://www.depisoenpiso.com/enviar-alojamiento.html?igsid=" + this.user.igsid,
           "title":"Publica ya"
         }])
         break;

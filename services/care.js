@@ -131,7 +131,7 @@ module.exports = class Care {
           method: "GET"
         });
 
-        console.log(response);
+        response = await response.json();
         
         response = Response.genGenericTemplate('https://images.typeform.com/images/MHeBtBKJUm9L/background/large', 'Publica una habitación', '', [{
           "type":"web_url",

@@ -85,10 +85,19 @@ module.exports = class Receive {
 
     if (message.includes("start over") || message.includes("get started")) {
       response = Response.genNuxMessage(this.user);
-    } else if (message.includes("publicar")) {
+    } else if (message.includes("ofrezco habitación")) {
       let care = new Care(this.user, this.webhookEvent);
       response = care.handlePayload("CARE_PUBLISH");
-    } else if (Number(message)) {
+    } else if (message.includes("busco habitación")) {
+      let care = new Care(this.user, this.webhookEvent);
+      response = care.handlePayload("CARE_PUBLISH_SEARCH");
+    } else if (message.includes("ofrezco piso entero")) {
+      let care = new Care(this.user, this.webhookEvent);
+      response = care.handlePayload("CARE_PUBLISH");
+    }
+    
+    // FB THINGS
+    else if (Number(message)) {
       // Assume numeric input ("123") to be an order number
       response = Order.handlePayload("ORDER_NUMBER");
     } else if (message.includes("#")) {
@@ -98,28 +107,7 @@ module.exports = class Receive {
       let care = new Care(this.user, this.webhookEvent);
       response = care.handlePayload("CARE_HELP");
     } else {
-      response = [
-        Response.genText(
-          i18n.__("fallback.any", {
-            message: this.webhookEvent.message.text
-          })
-        ),
-        Response.genText(i18n.__("get_started.guidance")),
-        Response.genQuickReply(i18n.__("get_started.help"), [
-          {
-            title: i18n.__("menu.suggestion"),
-            payload: "CURATION"
-          },
-          {
-            title: i18n.__("menu.help"),
-            payload: "CARE_HELP"
-          },
-          {
-            title: i18n.__("menu.start_over"),
-            payload: "GET_STARTED"
-          }
-        ])
-      ];
+      response = Response.genNuxMessage(this.user);
     }
 
     return response;

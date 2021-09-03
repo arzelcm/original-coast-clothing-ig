@@ -106,28 +106,28 @@ module.exports = class Care {
         break;
 
       case "CARE_PUBLISH":
-        let response = Response.genGenericTemplate('https://www.depisoenpiso.com/new-assets/img/bg-alojamiento.jpg', 'Publica una habitación', '', [{
+        response = Response.genGenericTemplate('https://www.depisoenpiso.com/new-assets/img/bg-alojamiento.jpg', 'Publica una habitación', '', [{
           "type":"web_url",
           "url":"https://www.depisoenpiso.com/enviar-alojamiento.html?igsid=" + this.user.igsid,
           "title":"Publica ya"
         }])
         break;
       case "CARE_PUBLISH_SEARCHING":
-        let response = Response.genGenericTemplate('https://www.depisoenpiso.com/new-assets/img/bg-alojamiento.jpg', 'Publica una habitación', '', [{
+        response = Response.genGenericTemplate('https://www.depisoenpiso.com/new-assets/img/bg-alojamiento.jpg', 'Publica una habitación', '', [{
           "type":"web_url",
           "url":"https://www.depisoenpiso.com/publicar-anuncio-usuario.html?igsid=" + this.user.igsid,
           "title":"Publicar ya"
         }])
         break;
       case "CARE_PUBLISH":
-        let response = Response.genGenericTemplate('https://images.typeform.com/images/MHeBtBKJUm9L/background/large', 'Publica una habitación', '', [{
+        response = Response.genGenericTemplate('https://images.typeform.com/images/MHeBtBKJUm9L/background/large', 'Publica una habitación', '', [{
           "type":"web_url",
           "url":"https://depisenpis.typeform.com/to/sncMnwmc?igsid=" + this.user.igsid,
           "title":"Publica ya"
         }])
         break;
       case "care_help":
-        let response = await fetch(new URL('https://www.depisoenpiso.com/old_root/php/controllers/test.php'), {
+        response = await fetch(new URL('https://www.depisoenpiso.com/old_root/php/controllers/test.php'), {
           method: "GET"
         });
 

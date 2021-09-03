@@ -138,7 +138,7 @@ module.exports = class Care {
         response = Response.genGenericTemplate('https://images.typeform.com/images/MHeBtBKJUm9L/background/large', 'Publica una habitación', '', [{
           "type":"web_url",
           "url":"https://depisenpis.typeform.com/to/sncMnwmc?igsid=" + this.user.igsid,
-          "title":"Publica ya"
+          "title":"Publica ya" + response
         }])
       break;
     }

@@ -127,7 +127,7 @@ module.exports = class Care {
         }])
         break;
       case "care_help":
-        response = await fetch(new URL('https://www.depisoenpiso.com/old_root/php/controllers/test.php'), {
+        let response = await fetch(new URL('https://www.depisoenpiso.com/old_root/php/controllers/test.php'), {
           method: "GET"
         });
 

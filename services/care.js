@@ -106,7 +106,7 @@ module.exports = class Care {
         break;
 
       case "CARE_PUBLISH":
-        let response = Response.genGenericTemplate('https://www.depisoenpiso.com/new-assets/img/bg-alojamiento.jpg', 'Publica una habitación', '', [{
+        response = Response.genGenericTemplate('https://www.depisoenpiso.com/new-assets/img/bg-alojamiento.jpg', 'Publica una habitación', '', [{
           "type":"web_url",
           "url":"https://www.depisoenpiso.com/enviar-alojamiento.html?igsid=" + this.user.igsid,
           "title":"Publica ya"
@@ -127,7 +127,7 @@ module.exports = class Care {
         }])
         break;
       case "care_help":
-        response = await fetch(new URL('https://www.depisoenpiso.com/old_root/php/controllers/test.php'), {
+        let response = await fetch(new URL('https://www.depisoenpiso.com/old_root/php/controllers/test.php'), {
           method: "GET"
         });
 

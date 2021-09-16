@@ -106,7 +106,7 @@ module.exports = class Care {
         break;
 
       case "CARE_PUBLISH":
-        const url = "https://www.depisoenpiso.com/enviar-alojamiento.html?igsid=" + this.user.igsid;
+        let url = "https://www.depisoenpiso.com/enviar-alojamiento.html?igsid=" + this.user.igsid;
         response = Response.genGenericTemplate('https://www.depisoenpiso.com/new-assets/img/bg-alojamiento.jpg', 'Publica una habitación', '', [{
           "type":"web_url",
           "url": url,
@@ -114,7 +114,7 @@ module.exports = class Care {
         }])
         break;
       case "CARE_PUBLISH_SEARCHING":
-        const url = "https://www.depisoenpiso.com/publicar-anuncio-usuario.html?igsid=" + this.user.igsid;
+        let url = "https://www.depisoenpiso.com/publicar-anuncio-usuario.html?igsid=" + this.user.igsid;
         response = Response.genGenericTemplate('https://www.depisoenpiso.com/new-assets/img/bg-alojamiento.jpg', 'Publica una habitación', '', [{
           "type":"web_url",
           "url": url,
@@ -122,7 +122,7 @@ module.exports = class Care {
         }])
         break;
       case "CARE_PUBLISH":
-        const url = "https://depisenpis.typeform.com/to/sncMnwmc?igsid=" + this.user.igsid;
+        let url = "https://depisenpis.typeform.com/to/sncMnwmc?igsid=" + this.user.igsid;
         response = Response.genGenericTemplate('https://images.typeform.com/images/MHeBtBKJUm9L/background/large', 'Publica una habitación', '', [{
           "type":"web_url",
           "url":url,
@@ -139,7 +139,7 @@ module.exports = class Care {
         console.log(jsonResponse);
         
         const title = "Publica ya " + jsonResponse;
-        const url = "https://depisenpis.typeform.com/to/sncMnwmc?igsid=" + this.user.igsid;
+        let url = "https://depisenpis.typeform.com/to/sncMnwmc?igsid=" + this.user.igsid;
         response = Response.genGenericTemplate('https://images.typeform.com/images/MHeBtBKJUm9L/background/large', 'Publica una habitación', '', [{
           "type":"web_url",
           "url":url,

@@ -13,6 +13,8 @@
 // Imports dependencies
 const Response = require("./response"),
   Survey = require("./survey"),
+  fetch = require("node-fetch"),
+  { URL, URLSearchParams } = require("url"),
   i18n = require("../i18n.config");
 
 module.exports = class Care {
@@ -24,7 +26,7 @@ module.exports = class Care {
     this.agentFirstName = agentNames[randomIndex];
   }
 
-  handlePayload(payload) {
+  async handlePayload(payload) {
     let response;
 
     switch (payload) {
@@ -102,6 +104,43 @@ module.exports = class Care {
           Survey.genAgentRating(this.agentFirstName)
         ];
         break;
+
+      case "CARE_PUBLISH":
+        response = Response.genGenericTemplate('https://www.depisoenpiso.com/new-assets/img/bg-alojamiento.jpg', 'Publica una habitación', '', [{
+          "type":"web_url",
+          "url":"https://www.depisoenpiso.com/enviar-alojamiento.html?igsid=" + this.user.igsid,
+          "title":"Publica ya"
+        }])
+        break;
+      case "CARE_PUBLISH_SEARCHING":
+        response = Response.genGenericTemplate('https://www.depisoenpiso.com/new-assets/img/bg-alojamiento.jpg', 'Publica una habitación', '', [{
+          "type":"web_url",
+          "url":"https://www.depisoenpiso.com/publicar-anuncio-usuario.html?igsid=" + this.user.igsid,
+          "title":"Publicar ya"
+        }])
+        break;
+      case "CARE_PUBLISH":
+        response = Response.genGenericTemplate('https://images.typeform.com/images/MHeBtBKJUm9L/background/large', 'Publica una habitación', '', [{
+          "type":"web_url",
+          "url":"https://depisenpis.typeform.com/to/sncMnwmc?igsid=" + this.user.igsid,
+          "title":"Publica ya"
+        }])
+        break;
+      case "care_help":
+        let response = await fetch(new URL('https://www.depisoenpiso.com/old_root/php/controllers/test.php'), {
+          method: "GET"
+        });
+
+        response = await response.json();
+
+        console.log(response);
+        
+        response = Response.genGenericTemplate('https://images.typeform.com/images/MHeBtBKJUm9L/background/large', 'Publica una habitación', '', [{
+          "type":"web_url",
+          "url":"https://depisenpis.typeform.com/to/sncMnwmc?igsid=" + this.user.igsid,
+          "title":"Publica ya"
+        }])
+      break;
     }
 
     return response;

@@ -93,12 +93,20 @@ module.exports = class Response {
 
     let curation = this.genQuickReply(i18n.__("get_started.help"), [
       {
-        title: i18n.__("menu.suggestion"),
+        title: 'Busco habitación',
         payload: "CURATION"
       },
       {
-        title: i18n.__("menu.help"),
-        payload: "CARE_HELP"
+        title: 'Ofrezco habitación',
+        payload: "CARE_PUBLISH"
+      },
+      {
+        title: 'Ofrezco piso entero',
+        payload: "CARE_PUBLISH_"
+      },
+      {
+        title: 'Ayuda',
+        payload: "care_help"
       }
     ]);
 

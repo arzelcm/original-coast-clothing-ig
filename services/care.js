@@ -28,6 +28,23 @@ module.exports = class Care {
     let response;
 
     switch (payload) {
+      case "CARE_BUSCANDO":
+        // TODO: List at least 1 last with photo published property
+        const buscandoUrl = "https://www.depisoenpiso.com/publicar-anuncio-usuario.html?igsid=" + this.user.igsid;
+        response = Response.genGenericTemplate('https://www.depisoenpiso.com/new-assets/img/bg-alojamiento.jpg', 'Publica una habitación', '', [{
+          "type": "web_url",
+          "url": url,
+          "title": "Publica ya"
+        }])
+        break;
+      case "CARE_OFRECIENDO":
+        const ofreciendoUrl = "https://www.depisoenpiso.com/enviar-alojamiento.html?igsid=" + this.user.igsid;
+        response = Response.genGenericTemplate('https://www.depisoenpiso.com/new-assets/img/bg-alojamiento.jpg', 'Publica una habitación', '', [{
+          "type": "web_url",
+          "url": url,
+          "title": "Publica ya"
+        }])
+        break;
       case "CARE_HELP":
         response = Response.genQuickReply(
           i18n.__("care.prompt", {

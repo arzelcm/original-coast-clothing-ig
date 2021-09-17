@@ -91,9 +91,12 @@ module.exports = class Receive {
     } else if (message.includes("#")) {
       // Input with # is treated as a suggestion
       response = Survey.handlePayload("CSAT_SUGGESTION");
-    } else if (message.includes(i18n.__("care.help").toLowerCase())) {
+    } else if (message.includes(('Busco un pis o habitació').toLowerCase())) {
       let care = new Care(this.user, this.webhookEvent);
-      response = care.handlePayload("CARE_HELP");
+      response = care.handlePayload("CARE_BUSCANDO");
+    } else if (message.includes(('Ofereixo un pis o habitació').toLowerCase())) {
+      let care = new Care(this.user, this.webhookEvent);
+      response = care.handlePayload("CARE_OFRECIENDO");
     } else {
       response = [
         Response.genText(

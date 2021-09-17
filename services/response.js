@@ -94,11 +94,11 @@ module.exports = class Response {
     let curation = this.genQuickReply('En què et puc ajudar avui? 😊', [
       {
         title: 'Busco un pis o habitació',
-        payload: "CURATION"
+        payload: "CARE_BUSCANDO"
       },
       {
         title: 'Ofereixo un pis o habitació',
-        payload: "CARE_HELP"
+        payload: "CARE_OFRECIENDO"
       }
     ]);
 

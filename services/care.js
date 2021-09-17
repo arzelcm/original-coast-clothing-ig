@@ -180,7 +180,7 @@ module.exports = class Care {
             }
           }
         }
-        const receive = new Receive(this.user, null);
+        let receiveMessage = new Receive(this.user, null);
 
         receive.sendMessage(response);
         break;

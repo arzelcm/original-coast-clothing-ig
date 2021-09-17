@@ -89,15 +89,13 @@ module.exports = class Response {
       })
     );
 
-    let guide = this.genText(i18n.__("get_started.guidance"));
-
     let curation = this.genQuickReply(i18n.__("get_started.help"), [
       {
-        title: i18n.__("menu.suggestion"),
+        title: 'Busco un pis o habitació',
         payload: "CURATION"
       },
       {
-        title: i18n.__("menu.help"),
+        title: 'Ofereixo un pis o habitació',
         payload: "CARE_HELP"
       }
     ]);

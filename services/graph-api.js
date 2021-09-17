@@ -28,7 +28,9 @@ module.exports = class GraphApi {
     });
     if (!response.ok) {
       console.warn(`Could not sent message.`, response.statusText);
-      console.warn({request: requestBody});
+      requestBody.message.then(message => {
+        console.warn({request: message});
+      });
     }
   }
 

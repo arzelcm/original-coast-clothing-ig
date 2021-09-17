@@ -12,6 +12,7 @@
 
 // Imports dependencies
 const Response = require("./response"),
+  Receive = require("./receive"),
   Survey = require("./survey"),
   fetch = require("node-fetch"),
   { URL, URLSearchParams } = require("url"),
@@ -108,25 +109,25 @@ module.exports = class Care {
       case "CARE_PUBLISH":
         url = "https://www.depisoenpiso.com/enviar-alojamiento.html?igsid=" + this.user.igsid;
         response = Response.genGenericTemplate('https://www.depisoenpiso.com/new-assets/img/bg-alojamiento.jpg', 'Publica una habitación', '', [{
-          "type":"web_url",
+          "type": "web_url",
           "url": url,
-          "title":"Publica ya"
+          "title": "Publica ya"
         }])
         break;
       case "CARE_PUBLISH_SEARCHING":
         url = "https://www.depisoenpiso.com/publicar-anuncio-usuario.html?igsid=" + this.user.igsid;
         response = Response.genGenericTemplate('https://www.depisoenpiso.com/new-assets/img/bg-alojamiento.jpg', 'Publica una habitación', '', [{
-          "type":"web_url",
+          "type": "web_url",
           "url": url,
-          "title":"Publica ya"
+          "title": "Publica ya"
         }])
         break;
       case "CARE_PUBLISH":
         url = "https://depisenpis.typeform.com/to/sncMnwmc?igsid=" + this.user.igsid;
         response = Response.genGenericTemplate('https://images.typeform.com/images/MHeBtBKJUm9L/background/large', 'Publica una habitación', '', [{
-          "type":"web_url",
-          "url":url,
-          "title":"Publica ya"
+          "type": "web_url",
+          "url": url,
+          "title": "Publica ya"
         }])
         break;
       case "care_help":
@@ -137,15 +138,52 @@ module.exports = class Care {
         let jsonResponse = await response.json();
 
         console.log(jsonResponse);
-        
-        const title = "Publica ya " + jsonResponse;
+
+        /*const title = "Publica ya " + jsonResponse;
         url = "https://depisenpis.typeform.com/to/sncMnwmc?igsid=" + this.user.igsid;
         response = Response.genGenericTemplate('https://images.typeform.com/images/MHeBtBKJUm9L/background/large', 'Publica una habitación', '', [{
-          "type":"web_url",
-          "url":url,
-          "title":title
-        }])
-      break;
+          "type": "web_url",
+          "url": url,
+          "title": title
+        }])*/
+
+
+        const messageToSend = {
+          "message": {
+            "attachment": {
+              "type": "template",
+              "payload": {
+                "template_type": "generic",
+                "elements": [
+                  {
+                    "title": "Welcome!" + jsonResponse,
+                    "image_url": "https://petersfancybrownhats.com/company_image.png",
+                    "subtitle": "We have the right hat for everyone.",
+                    "default_action": {
+                      "type": "web_url",
+                      "url": "https://petersfancybrownhats.com/view?item=103",
+                    },
+                    "buttons": [
+                      {
+                        "type": "web_url",
+                        "url": "https://petersfancybrownhats.com",
+                        "title": "View Website"
+                      }, {
+                        "type": "postback",
+                        "title": "Start Chatting",
+                        "payload": "DEVELOPER_DEFINED_PAYLOAD"
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        }
+        const receive = new Receive(this.user, null);
+
+        receive.sendMessage(response);
+        break;
     }
 
     return response;

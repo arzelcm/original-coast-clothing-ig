@@ -89,7 +89,9 @@ module.exports = class Response {
       })
     );
 
-    let curation = this.genQuickReply(i18n.__("get_started.help"), [
+    let guide = this.genText('Veuràs que hi ha un menú a baix de tot (si estàs xatejant des del mòbil). El pots utilitzar sempre que vulguis!');
+
+    let curation = this.genQuickReply('En què et puc ajudar avui? 😊', [
       {
         title: 'Busco un pis o habitació',
         payload: "CURATION"

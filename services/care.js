@@ -15,7 +15,6 @@ const Response = require("./response"),
   Receive = require("./receive"),
   Survey = require("./survey"),
   fetch = require("node-fetch"),
-  FormData = require("form-data"),
   { URL, URLSearchParams } = require("url"),
   i18n = require("../i18n.config");
 
@@ -35,14 +34,13 @@ module.exports = class Care {
       case "CARE_LAST_ROOM":
         var formData = new FormData();
         formData.append('type', 'property'); 
-        let response = await fetch(new URL('https://www.depisoenpiso.com/new-assets/php/recent.php'), {
-          method: "POST",
-          body: formData
+        let response = await fetch(new URL('https://www.depisoenpiso.com/old_root/php/controllers/test.php'), {
+          method: "GET"
         });
 
         let jsonResponse = await response.json();
 
-        const firstProperty = jsonResponse.properties[0];
+        const firstProperty = jsonResponse;
         response = Response.genGenericTemplate(firstProperty.image, firstProperty.street + ', ' + firstProperty.city, '', [{
           "type": "web_url",
           "url": 'https://www.depisoenpiso.com/alojamiento.html?prop=' + firstProperty.id,

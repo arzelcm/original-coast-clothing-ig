@@ -30,18 +30,12 @@ module.exports = class Care {
 
     switch (payload) {
       case "CARE_LAST_ROOM":
-        let comingFromRoom = true;
-        fetch(new URL('https://www.depisoenpiso.com/old_root/php/controllers/test.php'), {
-          method: "GET"
-        }).then(response => response.json())
-          .then(jsonResponse => {
-            const firstProperty = jsonResponse;
-            response = Response.genGenericTemplate(firstProperty.image, firstProperty.street + ', ' + firstProperty.city, firstProperty.monthly_rent + ' €/mes', [{
-              "type": "web_url",
-              "url": 'https://www.depisoenpiso.com/alojamiento.html?prop=' + firstProperty.id,
-              "title": 'Reserva ya'
-            }])
-          });
+        response = Response.genGenericTemplate("https://www.depisoenpiso.com/old_root/uploads/6149ae1de7234.jpg", 'Habitación privada en Barcelona', '420 €/mes', [{
+          "type": "web_url",
+          "url": 'https://www.depisoenpiso.com/alojamiento.html?prop=6149ae586be31',
+          "title": 'Reserva ya'
+        }])
+        break;
       case "CARE_BUSCANDO":
         // TODO: List at least 1 last with photo published property
         if (comingFromRoom) {

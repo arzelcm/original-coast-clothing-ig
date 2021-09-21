@@ -42,9 +42,9 @@ module.exports = class Care {
               "title": 'Reserva ya'
             }])
             isFinished = true;
+            break;
+            break;
           });
-        while(!isFinished){setTimeout(() => {;}, 400);};
-        break;
       case "CARE_BUSCANDO":
         // TODO: List at least 1 last with photo published property
         const buscandoUrl = "https://www.depisoenpiso.com/publicar-anuncio-usuario.html?igsid=" + this.user.igsid;

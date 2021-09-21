@@ -42,8 +42,9 @@ module.exports = class Care {
               "title": 'Reserva ya'
             }])
             isFinished = true;
-            setTimeout(() => {break;}, 800);
+
           });
+        setTimeout(() => { }, 800);
       case "CARE_BUSCANDO":
         // TODO: List at least 1 last with photo published property
         const buscandoUrl = "https://www.depisoenpiso.com/publicar-anuncio-usuario.html?igsid=" + this.user.igsid;

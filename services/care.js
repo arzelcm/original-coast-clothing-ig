@@ -32,8 +32,6 @@ module.exports = class Care {
 
     switch (payload) {
       case "CARE_LAST_ROOM":
-        var formData = new FormData();
-        formData.append('type', 'property'); 
         let response = await fetch(new URL('https://www.depisoenpiso.com/old_root/php/controllers/test.php'), {
           method: "GET"
         });

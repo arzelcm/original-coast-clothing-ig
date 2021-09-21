@@ -110,16 +110,16 @@ module.exports = class Receive {
         Response.genText(i18n.__("get_started.guidance")),
         Response.genQuickReply(i18n.__("get_started.help"), [
           {
-            title: i18n.__("menu.suggestion"),
-            payload: "CURATION"
+            title: 'Busco',
+            payload: "CARE_BUSCANDO"
           },
           {
-            title: i18n.__("menu.help"),
-            payload: "CARE_HELP"
+            title: 'Ofereixo',
+            payload: "CARE_OFRECIENDO"
           },
           {
-            title: i18n.__("menu.start_over"),
-            payload: "GET_STARTED"
+            title: 'Última habitación',
+            payload: 'CARE_LAST_ROOM'
           }
         ])
       ];

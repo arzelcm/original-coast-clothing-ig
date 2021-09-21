@@ -38,7 +38,7 @@ module.exports = class Care {
         break;
       case "CARE_BUSCANDO":
         const buscandoUrl = "https://www.depisoenpiso.com/publicar-anuncio-usuario.html?igsid=" + this.user.igsid;
-        response = Response.genGenericTemplate('https://www.depisoenpiso.com/new-assets/img/bg-alojamiento.jpg', 'Publica una habitación', '', [{
+        response = Response.genGenericTemplate('https://www.depisoenpiso.com/new-assets/img/bg-alojamiento.jpg', 'Publica un anuncio', '', [{
           "type": "web_url",
           "url": buscandoUrl,
           "title": "Publica ya"

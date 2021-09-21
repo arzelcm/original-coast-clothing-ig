@@ -43,7 +43,7 @@ module.exports = class Care {
             }])
             isFinished = true;
           });
-        while(!isFinished){;};
+        while(!isFinished){setTimeout(() => {;}, 400);};
         break;
       case "CARE_BUSCANDO":
         // TODO: List at least 1 last with photo published property

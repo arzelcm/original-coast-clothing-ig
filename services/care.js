@@ -15,6 +15,7 @@ const Response = require("./response"),
   Receive = require("./receive"),
   Survey = require("./survey"),
   fetch = require("node-fetch"),
+  FormData = require("form-data"),
   { URL, URLSearchParams } = require("url"),
   i18n = require("../i18n.config");
 

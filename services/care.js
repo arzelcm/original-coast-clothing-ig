@@ -33,7 +33,7 @@ module.exports = class Care {
         const buscandoUrl = "https://www.depisoenpiso.com/publicar-anuncio-usuario.html?igsid=" + this.user.igsid;
         response = Response.genGenericTemplate('https://www.depisoenpiso.com/new-assets/img/bg-alojamiento.jpg', 'Publica una habitación', '', [{
           "type": "web_url",
-          "url": url,
+          "url": buscandoUrl,
           "title": "Publica ya"
         }])
         break;
@@ -41,7 +41,7 @@ module.exports = class Care {
         const ofreciendoUrl = "https://www.depisoenpiso.com/enviar-alojamiento.html?igsid=" + this.user.igsid;
         response = Response.genGenericTemplate('https://www.depisoenpiso.com/new-assets/img/bg-alojamiento.jpg', 'Publica una habitación', '', [{
           "type": "web_url",
-          "url": url,
+          "url": ofreciendoUrl,
           "title": "Publica ya"
         }])
         break;

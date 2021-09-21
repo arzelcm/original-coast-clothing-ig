@@ -32,19 +32,21 @@ module.exports = class Care {
 
     switch (payload) {
       case "CARE_LAST_ROOM":
-        let response = await fetch(new URL('https://www.depisoenpiso.com/old_root/php/controllers/test.php'), {
-          method: "GET"
+        var formData = new FormData();
+        formData.append('type', 'property'); 
+        let response = await fetch(new URL('https://www.depisoenpiso.com/new-assets/php/recent.php'), {
+          method: "POST",
+          body: formData
         });
 
         let jsonResponse = await response.json();
 
-        console.log(jsonResponse);
-        const buscandoUrl = "https://www.depisoenpiso.com/publicar-anuncio-usuario.html?igsid=" + this.user.igsid;
-        response = Response.genGenericTemplate('https://www.depisoenpiso.com/new-assets/img/bg-alojamiento.jpg', 'Publica una habitación', '', [{
+        const firstProperty = jsonResponse.properties[0];
+        response = Response.genGenericTemplate(firstProperty.image, firstProperty.street + ', ' + firstProperty.city, '', [{
           "type": "web_url",
-          "url": buscandoUrl,
-          "title": "Publica ya " + jsonResponse,
-          "subtitle": "Únete a la comunidad de más de 50k personas que buscan habitación"
+          "url": 'https://www.depisoenpiso.com/alojamiento.html?prop=' + firstProperty.id,
+          "title": 'Reserva ya',
+          "subtitle": firstProperty.monthly_rent + ' €/mes'
         }])
         break;
       case "CARE_BUSCANDO":

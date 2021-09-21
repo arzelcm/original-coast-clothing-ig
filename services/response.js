@@ -99,6 +99,9 @@ module.exports = class Response {
       {
         title: 'Ofereixo',
         payload: "CARE_OFRECIENDO"
+      }, {
+        title: 'Última habitación',
+        payload: 'CARE_LAST_ROOM'
       }
     ]);
 

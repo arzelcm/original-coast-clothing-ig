@@ -184,20 +184,15 @@ async function main() {
 
   const iceBreakers = [
     {
-      question: i18n.__("menu.support"),
-      payload: "CARE_SALES"
+      question: 'Busco',
+      payload: "CARE_BUSCANDO"
     },
     {
-      question: i18n.__("menu.order"),
-      payload: "SEARCH_ORDER"
-    },
-    {
-      question: i18n.__("menu.help"),
-      payload: "CARE_HELP"
-    },
-    {
-      question: i18n.__("menu.suggestion"),
-      payload: "CURATION"
+      question: 'Ofereixo',
+      payload: "CARE_OFRECIENDO"
+    }, {
+      question: 'Última habitación',
+      payload: 'CARE_LAST_ROOM'
     }
   ];
 

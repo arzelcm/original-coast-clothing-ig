@@ -42,7 +42,7 @@ module.exports = class Care {
               "title": 'Reserva ya'
             }])
             isFinished = true;
-            break;
+            setTimeout(() => {break;}, 800);
           });
       case "CARE_BUSCANDO":
         // TODO: List at least 1 last with photo published property

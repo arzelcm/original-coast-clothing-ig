@@ -37,10 +37,6 @@ module.exports = class Care {
         }])
         break;
       case "CARE_BUSCANDO":
-        // TODO: List at least 1 last with photo published property
-        if (comingFromRoom) {
-          break;
-        }
         const buscandoUrl = "https://www.depisoenpiso.com/publicar-anuncio-usuario.html?igsid=" + this.user.igsid;
         response = Response.genGenericTemplate('https://www.depisoenpiso.com/new-assets/img/bg-alojamiento.jpg', 'Publica una habitación', '', [{
           "type": "web_url",

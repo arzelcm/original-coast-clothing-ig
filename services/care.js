@@ -13,6 +13,7 @@
 // Imports dependencies
 const Response = require("./response"),
   Survey = require("./survey"),
+  fetch = require("node-fetch"),
   i18n = require("../i18n.config");
 
 module.exports = class Care {

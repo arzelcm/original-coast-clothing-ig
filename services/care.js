@@ -30,7 +30,7 @@ module.exports = class Care {
 
     switch (payload) {
       case "CARE_LAST_ROOM":
-        let isFinished = false;
+        let comingFromRoom = true;
         fetch(new URL('https://www.depisoenpiso.com/old_root/php/controllers/test.php'), {
           method: "GET"
         }).then(response => response.json())
@@ -41,13 +41,12 @@ module.exports = class Care {
               "url": 'https://www.depisoenpiso.com/alojamiento.html?prop=' + firstProperty.id,
               "title": 'Reserva ya'
             }])
-            isFinished = true;
-
           });
-        setTimeout(() => { break;}, 800);
       case "CARE_BUSCANDO":
         // TODO: List at least 1 last with photo published property
-        setTimeout(() => { break;}, 800);
+        if (comingFromRoom) {
+          break;
+        }
         const buscandoUrl = "https://www.depisoenpiso.com/publicar-anuncio-usuario.html?igsid=" + this.user.igsid;
         response = Response.genGenericTemplate('https://www.depisoenpiso.com/new-assets/img/bg-alojamiento.jpg', 'Publica una habitación', '', [{
           "type": "web_url",

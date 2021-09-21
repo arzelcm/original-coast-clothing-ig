@@ -27,7 +27,7 @@ module.exports = class Care {
     this.agentFirstName = agentNames[randomIndex];
   }
 
-  handlePayload(payload) {
+  async handlePayload(payload) {
     let response;
 
     switch (payload) {

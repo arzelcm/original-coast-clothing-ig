@@ -96,7 +96,7 @@ module.exports = class Receive {
       response = care.handlePayload("CARE_BUSCANDO");
     } else if (message.includes(('Última habitación').toLowerCase())) {
       let care = new Care(this.user, this.webhookEvent);
-      response = care.handlePayload("CARE_LAST_ROOM"C);
+      response = care.handlePayload("CARE_LAST_ROOM");
     } else if (message.includes(('Ofereixo').toLowerCase())) {
       let care = new Care(this.user, this.webhookEvent);
       response = care.handlePayload("CARE_OFRECIENDO");

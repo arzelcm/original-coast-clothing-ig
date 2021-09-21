@@ -28,20 +28,22 @@ module.exports = class Care {
     let response;
 
     switch (payload) {
-      /*case "CARE_LAST_ROOM":
-        let fetchResponse = await fetch(new URL('https://www.depisoenpiso.com/old_root/php/controllers/test.php'), {
+      case "CARE_LAST_ROOM":
+        let isFinished = false;
+        fetch(new URL('https://www.depisoenpiso.com/old_root/php/controllers/test.php'), {
           method: "GET"
-        });
-
-        let jsonResponse = await fetchResponse.json();
-
-        const firstProperty = jsonResponse;
-        response = Response.genGenericTemplate(firstProperty.image, firstProperty.street + ', ' + firstProperty.city, firstProperty.monthly_rent + ' €/mes', [{
-          "type": "web_url",
-          "url": 'https://www.depisoenpiso.com/alojamiento.html?prop=' + firstProperty.id,
-          "title": 'Reserva ya'
-        }])
-        break;*/
+        }).then(response => response.json())
+          .then(jsonResponse => {
+            const firstProperty = jsonResponse;
+            response = Response.genGenericTemplate(firstProperty.image, firstProperty.street + ', ' + firstProperty.city, firstProperty.monthly_rent + ' €/mes', [{
+              "type": "web_url",
+              "url": 'https://www.depisoenpiso.com/alojamiento.html?prop=' + firstProperty.id,
+              "title": 'Reserva ya'
+            }])
+            isFinished = true;
+          });
+        while(!isFinished){;};
+        break;
       case "CARE_BUSCANDO":
         // TODO: List at least 1 last with photo published property
         const buscandoUrl = "https://www.depisoenpiso.com/publicar-anuncio-usuario.html?igsid=" + this.user.igsid;

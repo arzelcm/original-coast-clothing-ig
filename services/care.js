@@ -12,10 +12,7 @@
 
 // Imports dependencies
 const Response = require("./response"),
-  Receive = require("./receive"),
   Survey = require("./survey"),
-  fetch = require("node-fetch"),
-  { URL, URLSearchParams } = require("url"),
   i18n = require("../i18n.config");
 
 module.exports = class Care {
@@ -27,39 +24,27 @@ module.exports = class Care {
     this.agentFirstName = agentNames[randomIndex];
   }
 
-  async handlePayload(payload) {
+  handlePayload(payload) {
     let response;
 
     switch (payload) {
-      case "CARE_LAST_ROOM":
-        let fetchResponse = await fetch(new URL('https://www.depisoenpiso.com/old_root/php/controllers/test.php'), {
-          method: "GET"
-        });
-
-        let jsonResponse = await fetchResponse.json();
-
-        const firstProperty = jsonResponse;
-        response = Response.genGenericTemplate(firstProperty.image, firstProperty.street + ', ' + firstProperty.city, firstProperty.monthly_rent + ' €/mes', [{
-          "type": "web_url",
-          "url": 'https://www.depisoenpiso.com/alojamiento.html?prop=' + firstProperty.id,
-          "title": 'Reserva ya'
-        }])
-        break;
       case "CARE_BUSCANDO":
         // TODO: List at least 1 last with photo published property
         const buscandoUrl = "https://www.depisoenpiso.com/publicar-anuncio-usuario.html?igsid=" + this.user.igsid;
-        response = Response.genGenericTemplate('https://www.depisoenpiso.com/new-assets/img/bg-alojamiento.jpg', 'Publica una habitación', "Únete a la comunidad de más de 50k personas que buscan habitación", [{
+        response = Response.genGenericTemplate('https://www.depisoenpiso.com/new-assets/img/bg-alojamiento.jpg', 'Publica una habitación', '', [{
           "type": "web_url",
           "url": buscandoUrl,
-          "title": "Publica ya"
+          "title": "Publica ya",
+          "subtitle": "Únete a la comunidad de más de 50k personas que buscan habitación"
         }])
         break;
       case "CARE_OFRECIENDO":
         const ofreciendoUrl = "https://www.depisoenpiso.com/enviar-alojamiento.html?igsid=" + this.user.igsid;
-        response = Response.genGenericTemplate('https://www.depisoenpiso.com/new-assets/img/bg-alojamiento.jpg', 'Publica una habitación', "Encuentra a alguien de las más de 50k personas que buscan habitación en nuestra comunidad", [{
+        response = Response.genGenericTemplate('https://www.depisoenpiso.com/new-assets/img/bg-alojamiento.jpg', 'Publica una habitación', '', [{
           "type": "web_url",
           "url": ofreciendoUrl,
-          "title": "Publica ya"
+          "title": "Publica ya",
+          "subtitle": "Encuentra a alguien de las más de 50k personas que buscan habitación en nuestra comunidad"
         }])
         break;
       case "CARE_HELP":

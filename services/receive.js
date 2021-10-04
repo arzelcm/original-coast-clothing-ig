@@ -114,10 +114,6 @@ module.exports = class Receive {
           {
             title: i18n.__("ofering.title"),
             payload: "CARE_OFRECIENDO"
-          },
-          {
-            title: 'Última habitación',
-            payload: 'CARE_LAST_ROOM'
           }
         ])
       ];

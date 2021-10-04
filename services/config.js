@@ -33,7 +33,7 @@ module.exports = {
   pageAccesToken: process.env.PAGE_ACCESS_TOKEN,
   appSecret: process.env.APP_SECRET,
   verifyToken: process.env.VERIFY_TOKEN,
-  shopUrl: process.env.SHOP_URL || "https://www.originalcoastclothing.com",
+  shopUrl: "https://www.depisoenpiso.com",
 
   // URL of your app domain. Will be automatically updated.
   appUrl: process.env.APP_URL || "<App URL>",
@@ -42,7 +42,7 @@ module.exports = {
   port: process.env.PORT || 3000,
 
   // Optionally set a locale
-  locale: process.env.LOCALE,
+  locale: "es",
 
   // Base URL for Messenger Platform API calls
   get apiUrl() {

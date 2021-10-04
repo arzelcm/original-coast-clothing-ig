@@ -154,6 +154,7 @@ module.exports = class Receive {
   handleQuickReply() {
     // Get the payload of the quick reply
     let payload = this.webhookEvent.message.quick_reply.payload;
+    console.log(payload);
 
     return this.handlePayload(payload);
   }

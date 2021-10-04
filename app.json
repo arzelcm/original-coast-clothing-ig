@@ -32,7 +32,7 @@
     },
     "LOCALE": {
       "description": "Optional code for experience locale, e.g. `en_US`. Must match a file in locales folder.",
-      "value": "en_US",
+      "value": "es",
       "required": false
     }
   }

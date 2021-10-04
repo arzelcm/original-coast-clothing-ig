@@ -13,9 +13,11 @@ module.exports = class User {
     this.igsid = igsid;
     this.name = "";
     this.profilePic = "";
+    this.lang = "es";
   }
-  setProfile(profile) {
+  setProfile(profile, lang = "es") {
     this.name = profile.name;
     this.profilePic = profile.profilePic;
+    this.lang = lang;
   }
 };

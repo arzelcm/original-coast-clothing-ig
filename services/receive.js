@@ -108,11 +108,11 @@ module.exports = class Receive {
         Response.genText(i18n.__("get_started.guidance")),
         Response.genQuickReply(i18n.__("get_started.help"), [
           {
-            title: 'Busco',
+            title: i18n.__("searching.title"),
             payload: "CARE_BUSCANDO"
           },
           {
-            title: 'Ofereixo',
+            title: i18n.__("ofering.title"),
             payload: "CARE_OFRECIENDO"
           },
           {

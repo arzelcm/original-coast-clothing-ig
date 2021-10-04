@@ -42,7 +42,7 @@ module.exports = {
   port: process.env.PORT || 3000,
 
   // Optionally set a locale
-  locale: "es",
+  locale: process.env.LOCALE,
 
   // Base URL for Messenger Platform API calls
   get apiUrl() {

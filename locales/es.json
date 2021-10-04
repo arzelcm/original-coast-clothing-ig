@@ -5,9 +5,22 @@
         "ofering": "ofreciendo"
     },
     "searching": {
-        "title": "Busco"
+        "title": "Buscando"
     },
     "ofering": {
-        "title": "Ofrezco"
+        "title": "Ofreciendo"
+    },
+    "get_started": {
+        "welcome": "Hola {{userName}}, bienvenid@ a De Piso en Piso! Me llamo Pisito 🤖 i te ayudaré en lo que necesites.",
+        "guidance": "Veras que hay un menú a bajo del todo. ¡Lo puedes utilizar siempre que quieras!",
+        "help": "¿Estás buscando u ofreciendo?"
+    },
+    "languages": {
+        "question": "Antes de nada, en qué idioma quieres que hablemos?",
+        "catalan": "Català",
+        "spanish": "Castellano"
+    },
+    "fallback": {
+        "any": "Lo siento no entendí \"{{message}}\". Prueba con otra cosa o envíanos un whatsapp."
     }
 }

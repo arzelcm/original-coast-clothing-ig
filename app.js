@@ -184,15 +184,12 @@ async function main() {
 
   const iceBreakers = [
     {
-      question: 'Busco',
+      question: i18n.__("searching.title"),
       payload: "CARE_BUSCANDO"
     },
     {
-      question: 'Ofereixo',
+      question: i18n.__("ofering.title"),
       payload: "CARE_OFRECIENDO"
-    }, {
-      question: 'Última habitación',
-      payload: 'CARE_LAST_ROOM'
     }
   ];
 

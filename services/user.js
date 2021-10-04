@@ -14,6 +14,7 @@ module.exports = class User {
     this.name = "";
     this.profilePic = "";
     this.lang = "es";
+    this.firstMessage = true;
   }
   setProfile(profile, lang = "es") {
     this.name = profile.name;

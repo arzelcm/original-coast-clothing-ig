@@ -5,9 +5,22 @@
         "ofering": "ofreciendo"
     },
     "searching": {
-        "title": "Busco"
+        "title": "Buscant"
     },
     "ofering": {
-        "title": "Ofereixo"
+        "title": "Oferint"
+    },
+    "get_started": {
+        "welcome": "Hola {{userName}}, benvingut/da a De Pis en Pis! Em dic Pisito 🤖 i t'ajudaré en el que necessitis.",
+        "guidance": "Veuràs que hi ha un menú a baix de tot. El pots utilitzar sempre que vulguis!",
+        "help": "Estàs buscant o oferint?"
+    },
+    "languages": {
+        "question": "Abans de res, però, en quin idioma vols que parlem?",
+        "catalan": "Català",
+        "spanish": "Castellano"
+    },
+    "fallback": {
+        "any": "Lo siento no entendí \"{{message}}\". Prueba con otra cosa o envíanos un whatsapp."
     }
 }

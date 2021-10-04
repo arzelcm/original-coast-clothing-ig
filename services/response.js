@@ -89,22 +89,37 @@ module.exports = class Response {
       })
     );
 
-    let guide = this.genText('Veuràs que hi ha un menú a baix de tot (si estàs xatejant des del mòbil). El pots utilitzar sempre que vulguis!');
+    let guide = this.genText(i18n.__("get_started.guidance"));
 
-    let curation = this.genQuickReply('En què et puc ajudar avui? 😊', [
+    let curation = this.genQuickReply(i18n.__("languages.question"), [
       {
-        title: 'Busco',
+        title: i18n.__("languages.catalan"),
+        payload: "CARE_CATALAN"
+      },
+      {
+        title: i18n.__("languages.spanish"),
+        payload: "CARE_SPANISH"
+      }
+    ]);
+    user.firstMessage = false;
+
+    return [welcome, guide, curation];
+  }
+
+  static genCommonMenu(user) {
+    let menu = this.genQuickReply(i18n.__("get_started.help"), [
+      {
+        title: i18n.__("searching.title"),
         payload: "CARE_BUSCANDO"
       },
       {
-        title: 'Ofereixo',
+        title: i18n.__("ofering.title"),
         payload: "CARE_OFRECIENDO"
-      }, {
-        title: 'Última habitación',
-        payload: 'CARE_LAST_ROOM'
       }
+      // TODO: "Others" field
     ]);
+    user.firstMessage = false;
 
-    return [welcome, guide, curation];
+    return menu;
   }
 };

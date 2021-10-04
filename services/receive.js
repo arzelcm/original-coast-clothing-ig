@@ -83,7 +83,7 @@ module.exports = class Receive {
 
     let response;
 
-    if (message.includes("get started") || message.includes(i18n.__("keyWords.searching").toLowerCase())) {
+    if (message.includes("get started") || message.includes(i18n.__("keyWords.hola").toLowerCase())) {
       response = Response.genNuxMessage(this.user);
 
     } else if (message.includes(i18n.__("searching.title").toLowerCase())) {
@@ -98,6 +98,16 @@ module.exports = class Receive {
       let care = new Care(this.user, this.webhookEvent);
       response = care.handlePayload("CARE_OFRECIENDO");
 
+    } else if (message == i18n.__("languages.catalan").toLowerCase()) {
+      i18n.setLocale("ca");
+
+
+    } else if (message == i18n.__("languages.spanish").toLowerCase()) {
+      i18n.setLocale("es");
+
+
+    } else if (this.user.firstMessage) {
+      response = Response.genNuxMessage(this.user);
     } else {
       response = [
         Response.genText(
@@ -106,16 +116,7 @@ module.exports = class Receive {
           })
         ),
         Response.genText(i18n.__("get_started.guidance")),
-        Response.genQuickReply(i18n.__("get_started.help"), [
-          {
-            title: i18n.__("searching.title"),
-            payload: "CARE_BUSCANDO"
-          },
-          {
-            title: i18n.__("ofering.title"),
-            payload: "CARE_OFRECIENDO"
-          }
-        ])
+        Response.genCommonMenu()
       ];
     }
 

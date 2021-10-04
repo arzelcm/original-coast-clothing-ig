@@ -106,7 +106,7 @@ module.exports = class Response {
     return [welcome, guide, curation];
   }
 
-  static genCommonMenu(user) {
+  static genCommonMenu() {
     let menu = this.genQuickReply(i18n.__("get_started.help"), [
       {
         title: i18n.__("searching.title"),
@@ -118,7 +118,6 @@ module.exports = class Response {
       }
       // TODO: "Others" field
     ]);
-    user.firstMessage = false;
 
     return menu;
   }

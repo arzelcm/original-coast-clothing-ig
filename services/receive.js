@@ -37,18 +37,18 @@ module.exports = class Receive {
 
         if (message.is_echo) {
           return;
-        } else if (message.quick_reply) {
+        }/* else if (message.quick_reply) {
           responses = this.handleQuickReply();
         } else if (message.attachments) {
           responses = this.handleAttachmentMessage();
-        } else if (message.text) {
+        }*/ else if (message.text) {
           responses = this.handleTextMessage();
         }
-      } else if (event.postback) {
+      }/* else if (event.postback) {
         responses = this.handlePostback();
       } else if (event.referral) {
         responses = this.handleReferral();
-      }
+      }*/
     } catch (error) {
       console.error(error);
       responses = {

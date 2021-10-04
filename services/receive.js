@@ -100,11 +100,11 @@ module.exports = class Receive {
 
     } else if (message == i18n.__("languages.catalan").toLowerCase()) {
       i18n.setLocale("ca");
-      Response.genCommonMenu()
+      response = Response.genCommonMenu();
 
     } else if (message == i18n.__("languages.spanish").toLowerCase()) {
       i18n.setLocale("es");
-      Response.genCommonMenu()
+      response = Response.genCommonMenu();
 
     } else if (this.user.firstMessage) {
       response = Response.genNuxMessage(this.user);

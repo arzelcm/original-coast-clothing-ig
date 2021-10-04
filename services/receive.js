@@ -83,23 +83,21 @@ module.exports = class Receive {
 
     let response;
 
-    if (message.includes("start over") || message.includes("get started") || message.includes("hola")) {
+    if (message.includes("get started") || message.includes(i18n.__("keyWords.searching").toLowerCase())) {
       response = Response.genNuxMessage(this.user);
-    } else if (Number(message)) {
-      // Assume numeric input ("123") to be an order number
-      response = Order.handlePayload("ORDER_NUMBER");
-    } else if (message.includes("#")) {
-      // Input with # is treated as a suggestion
-      response = Survey.handlePayload("CSAT_SUGGESTION");
-    } else if (message.includes(('Busco').toLowerCase())) {
+
+    } else if (message.includes(i18n.__("searching.title").toLowerCase())) {
       let care = new Care(this.user, this.webhookEvent);
       response = care.handlePayload("CARE_BUSCANDO");
+
     } else if (message.includes(('Última habitación').toLowerCase())) {
       let care = new Care(this.user, this.webhookEvent);
       response = care.handlePayload("CARE_LAST_ROOM");
-    } else if (message.includes(('Ofereixo').toLowerCase())) {
+
+    } else if (message.includes(i18n.__("ofering.title").toLowerCase())) {
       let care = new Care(this.user, this.webhookEvent);
       response = care.handlePayload("CARE_OFRECIENDO");
+
     } else {
       response = [
         Response.genText(

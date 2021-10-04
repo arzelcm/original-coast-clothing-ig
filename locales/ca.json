@@ -1,0 +1,13 @@
+{
+    "keyWords": {
+        "hola": "hola",
+        "searching": "ofreciendo",
+        "ofering": "ofreciendo"
+    },
+    "searching": {
+        "title": "Busco"
+    },
+    "ofering": {
+        "title": "Ofereixo"
+    }
+}

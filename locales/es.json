@@ -5,7 +5,12 @@
         "ofering": "ofreciendo"
     },
     "searching": {
-        "title": "Buscando"
+        "title": "Buscando",
+        "question": "A mi también me haría ilusión cambiar de aires jeje 😊🤖 ¿Quieres publicar un anuncio con tu demanda o ver las habitaciones disponibles?",
+        "options": {
+            "see": "Ver",
+            "publish": "Publicar"
+        }
     },
     "ofering": {
         "title": "Ofreciendo"

@@ -37,18 +37,20 @@ module.exports = class Care {
         }])
         break;
       case "CARE_BUSCANDO":
-        /*const buscandoUrl = "https://www.depisoenpiso.com/publicar-anuncio-usuario.html?igsid=" + this.user.igsid;
-        response = Response.genGenericTemplate('https://www.depisoenpiso.com/new-assets/img/bg-alojamiento.jpg', 'Publica un anuncio', '', [{
+        const buscandoUrl = "https://www.depisoenpiso.com/publicar-anuncio-usuario.html?igsid=" + this.user.igsid;
+        /*response = Response.genGenericTemplate('https://www.depisoenpiso.com/new-assets/img/bg-alojamiento.jpg', 'Publica un anuncio', '', [{
           "type": "web_url",
           "url": buscandoUrl,
           "title": "Publica ya"
         }])*/
+        
         response = Response.genQuickReply(
           i18n.__("searching.question"),
           [
             {
-              title: i18n.__("searching.options.see"),
-              payload: "CARE_ORDER"
+              "type": "web_url",
+              "url": ofreciendoUrl,
+              title: i18n.__("searching.options.see")
             },
             {
               title: i18n.__("searching.options.publish"),

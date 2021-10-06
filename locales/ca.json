@@ -26,6 +26,6 @@
         "spanish": "Castellano"
     },
     "fallback": {
-        "any": "Lo siento no entendí \"{{message}}\". Prueba con otra cosa o envíanos un whatsapp."
+        "any": "Ho sento, no entenc \"{{message}}\". Prova una altra cosa o envia'ns un WhatsApp."
     }
 }

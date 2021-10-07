@@ -111,7 +111,13 @@ module.exports = class Receive {
     } else if (message == i18n.__("others.options.human_contact.title").toLowerCase()) {
       let care = new Care(this.user, this.webhookEvent);
       response = care.handlePayload("CARE_CONTACT");
-    } else if (this.user.firstMessage) {
+    } else if (message == i18n.__("searching.options.publish").toLowerCase()) {
+      let care = new Care(this.user, this.webhookEvent);
+      response = care.handlePayload("CARE_PUBLISH_WRAPPER");
+    } else if (message == i18n.__("searching.options.see").toLowerCase()) {
+      let care = new Care(this.user, this.webhookEvent);
+      response = care.handlePayload("CARE_BUSCANDO_SEE");
+    }  else if (this.user.firstMessage) {
       response = Response.genNuxMessage(this.user);
     } else {
       response = [

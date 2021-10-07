@@ -73,11 +73,11 @@ module.exports = class Care {
           i18n.__("others.title"),
           [
             {
-              title: i18n.__("others.options.joke"),
+              title: i18n.__("others.options.joke.title"),
               payload: "CARE_JOKE"
             },
             {
-              title: i18n.__("others.options.human_contact"),
+              title: i18n.__("others.options.human_contact.title"),
               payload: "CARE_CONTACT"
             }
           ]

@@ -4,6 +4,9 @@
         "searching": "ofreciendo",
         "ofering": "ofreciendo"
     },
+    "errors": {
+        "unknown_error": "Ha passat alguna cosa i no puc fer el que em dius 😣, si aquest problema persisteix posa't en contacte amb els meus companys humans perquè ho arreglin."
+    },
     "searching": {
         "title": "Buscant",
         "question": "A mi també em faria il·lusió cambiar d’aires hehe 😊🤖\nVols publicar un anunci amb la teva demanda o veure les habitacions disponibles?",
@@ -14,6 +17,9 @@
     },
     "ofering": {
         "title": "Oferint"
+    },
+    "others": {
+        "title": "Altres opcions"
     },
     "get_started": {
         "welcome": "Hola {{userName}}, benvingut/da a De Pis en Pis! Em dic Pisito 🤖 i t'ajudaré en el que necessitis.",

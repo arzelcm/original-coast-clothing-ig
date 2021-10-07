@@ -4,6 +4,9 @@
         "searching": "busco",
         "ofering": "ofreciendo"
     },
+    "errors": {
+        "unknown_error": "Algo malo ha pasado 😣, si persiste ponte en contacto con mis compañeros humanos para poder resolverlo."
+    },
     "searching": {
         "title": "Buscando",
         "question": "A mi también me haría ilusión cambiar de aires jeje 😊🤖\n¿Quieres publicar un anuncio con tu demanda o ver las habitaciones disponibles?",
@@ -14,6 +17,9 @@
     },
     "ofering": {
         "title": "Ofreciendo"
+    },
+    "others": {
+        "title": "Otras opciones"
     },
     "get_started": {
         "welcome": "Hola {{userName}}, bienvenid@ a De Piso en Piso! Me llamo Pisito 🤖 i te ayudaré en lo que necesites.",

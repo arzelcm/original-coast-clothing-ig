@@ -115,6 +115,10 @@ module.exports = class Response {
       {
         title: i18n.__("ofering.title"),
         payload: "CARE_OFRECIENDO"
+      },
+      {
+        title: i18n.__("others.title"),
+        payload: "CARE_OTHERS"
       }
       // TODO: "Others" field
     ]);

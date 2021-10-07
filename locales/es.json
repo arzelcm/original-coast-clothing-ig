@@ -12,7 +12,17 @@
         "question": "A mi también me haría ilusión cambiar de aires jeje 😊🤖\n¿Quieres publicar un anuncio con tu demanda o ver las habitaciones disponibles?",
         "options": {
             "see": "Ver",
-            "publish": "Publicar"
+            "publish": "Publicar",
+            "wrappers": {
+                "see": {
+                    "text": "Todas las habitaciones disponibles están en nuestra web. Puedes acceder haciendo click aquí 👇",
+                    "button": "📲 Ver habitaciones"
+                },
+                "publish": {
+                    "text": "Puedes publicar un anuncio gratis con tu demanda de habitación para que la gente tiene una habitación te contacte.",
+                    "button": "📝 Publicar anuncio"
+                }
+            }
         }
     },
     "ofering": {

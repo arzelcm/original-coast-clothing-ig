@@ -37,28 +37,34 @@ module.exports = class Care {
         }])
         break;
       case "CARE_BUSCANDO":
-
-        /*response = Response.genGenericTemplate('https://www.depisoenpiso.com/new-assets/img/bg-alojamiento.jpg', 'Publica un anuncio', '', [{
-          "type": "web_url",
-          "url": buscandoUrl,
-          "title": "Publica ya"
-        }])*/
-
-        const buscandoUrl = "https://www.depisoenpiso.com/publicar-anuncio-usuario.html?igsid=" + this.user.igsid;
         response = Response.genQuickReply(
           i18n.__("searching.question"),
           [
             {
-              "type": "web_url",
-              "url": ofreciendoUrl,
-              title: i18n.__("searching.options.see")
+              title: i18n.__("searching.options.see"),
+              payload: "CARE_BUSCANDO_SEE"
             },
             {
               title: i18n.__("searching.options.publish"),
-              payload: "CARE_BILLING"
+              payload: "CARE_PUBLISH_WRAPPER"
             }
           ]
         );
+        break;
+      case "CARE_PUBLISH_WRAPPER":
+        const buscandoUrl = "https://www.depisoenpiso.com/publicar-anuncio-usuario.html?igsid=" + this.user.igsid;
+        response = Response.genGenericTemplate('', i18n.__("searching.options.publish"), i18n.__("searching.options.wrappers.publish.text"), [{
+          "type": "web_url",
+          "url": buscandoUrl,
+          "title": i18n.__("searching.options.wrappers.publish.button")
+        }])
+        break;
+      case "CARE_BUSCANDO_SEE":
+        response = Response.genGenericTemplate('', i18n.__("others.options.human_contact.title"), i18n.__("others.options.human_contact.template.text"), [{
+          "type": "web_url",
+          "url": 'https://api.whatsapp.com/send?phone=34695757430',
+          "title": i18n.__("others.options.human_contact.template.button")
+        }])
         break;
       case "CARE_OFRECIENDO":
         var ofreciendoUrl = "https://www.depisoenpiso.com/enviar-alojamiento.html?igsid=" + this.user.igsid;
@@ -84,7 +90,7 @@ module.exports = class Care {
         );
         break;
       case "CARE_JOKE":
-        let randomIndex = Math.floor(Math.random() * i18n.__("others.options.joke.jokes.amount")); 
+        let randomIndex = Math.floor(Math.random() * i18n.__("others.options.joke.jokes.amount"));
         response = Response.genText(i18n.__("others.options.joke.jokes." + randomIndex));
         break;
       case "CARE_CONTACT":

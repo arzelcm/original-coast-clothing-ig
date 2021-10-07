@@ -12,7 +12,17 @@
         "question": "A mi també em faria il·lusió cambiar d’aires hehe 😊🤖\nVols publicar un anunci amb la teva demanda o veure les habitacions disponibles?",
         "options": {
             "see": "Veure",
-            "publish": "Publicar"
+            "publish": "Publicar",
+            "wrappers": {
+                "see": {
+                    "text": "Totes les habitacions disponibles estan a la nostra web. Pots accedir-hi fent click aquí 👇",
+                    "button": "📲 Veure habitacions"
+                },
+                "publish": {
+                    "text": "Pots publicar un anunci amb la teva demanda d'habitació perquè la gent que té una habitació lliure et contacti.",
+                    "button": "📝 Publicar anunci"
+                }
+            }
         }
     },
     "ofering": {

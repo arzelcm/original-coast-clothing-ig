@@ -52,7 +52,7 @@ module.exports = class Care {
         );
         break;
       case "CARE_PUBLISH_WRAPPER":
-        const buscandoUrl = "https://www.depisoenpiso.com/publicar-anuncio-usuario.html?igsid=" + this.user.igsid;
+        let buscandoUrl = "https://www.depisoenpiso.com/publicar-anuncio-usuario.html?igsid=" + this.user.igsid;
         response = Response.genGenericTemplate('', i18n.__("searching.options.publish"), i18n.__("searching.options.wrappers.publish.text"), [{
           "type": "web_url",
           "url": buscandoUrl,
@@ -60,19 +60,19 @@ module.exports = class Care {
         }])
         break;
       case "CARE_BUSCANDO_SEE":
-        const buscandoUrl = "https://www.depisoenpiso.com/publicar-anuncio-usuario.html?igsid=" + this.user.igsid;
-        response = Response.genGenericTemplate('', i18n.__("searching.options.publish"), i18n.__("searching.options.wrappers.publish.text"), [{
+        let seeUrl = "https://www.depisoenpiso.com/find-places.html?ciudad=Vic";
+        response = Response.genGenericTemplate('', i18n.__("searching.options.see"), i18n.__("searching.options.wrappers.see.text"), [{
           "type": "web_url",
-          "url": buscandoUrl,
-          "title": i18n.__("searching.options.wrappers.publish.button")
+          "url": seeUrl,
+          "title": i18n.__("searching.options.wrappers.see.button")
         }])
         break;
       case "CARE_OFRECIENDO":
-        var ofreciendoUrl = "https://www.depisoenpiso.com/find-places.html?ciudad=Vic";
-        response = Response.genGenericTemplate('', i18n.__("searching.options.see"), i18n.__("searching.options.wrappers.see.text"), [{
+        let ofreciendoUrl = "https://www.depisoenpiso.com/enviar-alojamiento.html?igsid=" + this.user.igsid;
+        response = Response.genGenericTemplate('https://www.depisoenpiso.com/new-assets/img/bg-alojamiento.jpg', 'Publica una habitación', '', [{
           "type": "web_url",
           "url": ofreciendoUrl,
-          "title": i18n.__("searching.options.wrappers.see.button")
+          "title": "Publica ya"
         }])
         break;
       case "CARE_OTHERS":

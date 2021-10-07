@@ -90,7 +90,7 @@ module.exports = class Care {
       case "CARE_CONTACT":
         response = Response.genGenericTemplate('', i18n.__("others.options.human_contact.title"), i18n.__("others.options.human_contact.template.text"), [{
           "type": "web_url",
-          "url": 'https://api.whatsapp.com/send?phone=34695757430&fbclid=IwAR1h3Uijk6l-zhRMN-78xuyBwokYHVvDBe_L3fDNaR_SUDA2NEniwOxUQNE',
+          "url": 'https://api.whatsapp.com/send?phone=34695757430',
           "title": i18n.__("others.options.human_contact.template.button")
         }])
         break;

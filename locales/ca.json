@@ -34,10 +34,10 @@
                 }
             },
             "human_contact": {
-                "title": "Contacto humano",
+                "title": "Contacte humà",
                 "template": {
-                    "text": "Si no ofreces ni buscas alojamiento, escríbeme un Whatsapp con lo que deseas (colaboraciones, información varia, etc.) y un humano 💃 de De Piso en Piso se pondrá en contacto contigo lo más pronto posible.",
-                    "button": "📲 Mandar Whatsapp"
+                    "text": "Si no ofereixes ni busques allotjament, escriu-me un Whatsapp amb el que desitgis (col·laboracions, informació varia, etc.) i un humà 💃 de De Piso en Piso es posarà en contacta amb tu el més aviat possible.",
+                    "button": "📲 Enviar Whatsapp"
                 }
             }
         }

@@ -60,18 +60,19 @@ module.exports = class Care {
         }])
         break;
       case "CARE_BUSCANDO_SEE":
-        response = Response.genGenericTemplate('', i18n.__("others.options.human_contact.title"), i18n.__("others.options.human_contact.template.text"), [{
+        const buscandoUrl = "https://www.depisoenpiso.com/publicar-anuncio-usuario.html?igsid=" + this.user.igsid;
+        response = Response.genGenericTemplate('', i18n.__("searching.options.publish"), i18n.__("searching.options.wrappers.publish.text"), [{
           "type": "web_url",
-          "url": 'https://api.whatsapp.com/send?phone=34695757430',
-          "title": i18n.__("others.options.human_contact.template.button")
+          "url": buscandoUrl,
+          "title": i18n.__("searching.options.wrappers.publish.button")
         }])
         break;
       case "CARE_OFRECIENDO":
-        var ofreciendoUrl = "https://www.depisoenpiso.com/enviar-alojamiento.html?igsid=" + this.user.igsid;
-        response = Response.genGenericTemplate('https://www.depisoenpiso.com/new-assets/img/bg-alojamiento.jpg', 'Publica una habitación', '', [{
+        var ofreciendoUrl = "https://www.depisoenpiso.com/find-places.html?ciudad=Vic";
+        response = Response.genGenericTemplate('', i18n.__("searching.options.see"), i18n.__("searching.options.wrappers.see.text"), [{
           "type": "web_url",
           "url": ofreciendoUrl,
-          "title": "Publica ya"
+          "title": i18n.__("searching.options.wrappers.see.button")
         }])
         break;
       case "CARE_OTHERS":

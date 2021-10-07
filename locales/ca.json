@@ -19,7 +19,27 @@
         "title": "Oferint"
     },
     "others": {
-        "title": "Altres opcions"
+        "title": "Altres opcions",
+        "options": {
+            "joke": {
+                "title": "Acudit",
+                "jokes": {
+                    "amount": 5,
+                    "0": "- Company, si sabessis que moriré demà… que em diries avui?\n- Què tal si fregues tu els plats avui, i ja els frego jo demà?\n😅😂😅😂",
+                    "1": "- Ei company! Creus que m’he passat amb el maquillatge?\n- Depèn de si sortiràs amb les teves amigues o a matar a Batman\n😅😂😅😂",
+                    "2": "- Hi ha companys de pis que són com preservatius… Et protegeixen quan la cosa es posa dura!😅😂😅😂",
+                    "3": "- Que li diu el teu cor al paper higiènic?\n- Jo palpito, i tu palculo\n😅😂😅😂",
+                    "4": "- Saps? M’han robat totes les cadires de casa meva i no saps com em sento 😔"
+                }
+            },
+            "human_contact": {
+                "title": "Contacto humano",
+                "template": {
+                    "text": "Si no ofreces ni buscas alojamiento, escríbeme un Whatsapp con lo que deseas (colaboraciones, información varia, etc.) y un humano 💃 de De Piso en Piso se pondrá en contacto contigo lo más pronto posible.",
+                    "button": "📲 Mandar Whatsapp"
+                }
+            }
+        }
     },
     "get_started": {
         "welcome": "Hola {{userName}}, benvingut/da a De Pis en Pis! Em dic Pisito 🤖 i t'ajudaré en el que necessitis.",

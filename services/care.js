@@ -37,13 +37,13 @@ module.exports = class Care {
         }])
         break;
       case "CARE_BUSCANDO":
-        
+
         /*response = Response.genGenericTemplate('https://www.depisoenpiso.com/new-assets/img/bg-alojamiento.jpg', 'Publica un anuncio', '', [{
           "type": "web_url",
           "url": buscandoUrl,
           "title": "Publica ya"
         }])*/
-        
+
         const buscandoUrl = "https://www.depisoenpiso.com/publicar-anuncio-usuario.html?igsid=" + this.user.igsid;
         response = Response.genQuickReply(
           i18n.__("searching.question"),
@@ -66,6 +66,44 @@ module.exports = class Care {
           "type": "web_url",
           "url": ofreciendoUrl,
           "title": "Publica ya"
+        }])
+        break;
+      case "CARE_OTHERS":
+        response = Response.genQuickReply(
+          i18n.__("others.title"),
+          [
+            {
+              title: i18n.__("others.options.joke"),
+              payload: "CARE_JOKE"
+            },
+            {
+              title: i18n.__("others.options.human_contact"),
+              payload: "CARE_CONTACT"
+            }
+          ]
+        );
+        break;
+      case "CARE_JOKE":
+        let randomIndex = Math.floor(Math.random() * i18n.__("others.options.joke.jokes.amount")); 
+        response = Response.genQuickReply(
+          i18n.__("others.options.joke.jokes." + randomIndex),
+          [
+            {
+              title: i18n.__("others.options.joke.title"),
+              payload: "CARE_JOKE"
+            },
+            {
+              title: i18n.__("others.options.human_contact.title"),
+              payload: "CARE_CONTACT"
+            }
+          ]
+        );
+        break;
+      case "CARE_CONTACT":
+        response = Response.genGenericTemplate('', i18n.__("others.options.human_contact.title"), i18n.__("others.options.human_contact.template.text"), [{
+          "type": "web_url",
+          "url": 'https://api.whatsapp.com/send?phone=34695757430&fbclid=IwAR1h3Uijk6l-zhRMN-78xuyBwokYHVvDBe_L3fDNaR_SUDA2NEniwOxUQNE',
+          "title": i18n.__("others.options.human_contact.template.button")
         }])
         break;
       case "CARE_HELP":

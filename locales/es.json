@@ -19,7 +19,28 @@
         "title": "Ofreciendo"
     },
     "others": {
-        "title": "Otras opciones"
+        "title": "Otras opciones",
+        "options": {
+            "joke": {
+                "title": "Chiste",
+                "jokes": {
+                    "amount": 6,
+                    "0": "- Hay compañeros de piso que son como preservativos... ¡te protegen cuando la cosa se pone dura!\n😅😂😅😂",
+                    "1": "- Tu compañero de piso y tú os tiráis por la ventana. ¿Quien cae primero?\n- Tú, porqué él se queda limpiando los cristales\n😅😂😅😂",
+                    "2": "- ¿Qué le dice el corazón a tu papel higiénico?\n- Yo palpito, y tú palculo\n😅😂😅😂",
+                    "3": "- Compi, si supieras que voy a morir mañana, ¿qué me dirías hoy?\n- ¿Qué tal si fregas los platos hoy y mañana los frego yo?\n😅😂😅😂",
+                    "4": "- ¿Hey Compi, crees que me he pasado con el maquillaje?\n- Depende de si vas a salir con tus amigas o a matar a Batman\n😅😂😅😂",
+                    "5": "- ¿Sabes? Me han robado todas las sillas de mi casa y ahora no sabes como me siento 😔"
+                }
+            },
+            "human_contact": {
+                "title": "Contacto humano",
+                "template": {
+                    "text": "Si no ofreces ni buscas alojamiento, escríbeme un Whatsapp con lo que deseas (colaboraciones, información varia, etc.) y un humano 💃 de De Piso en Piso se pondrá en contacto contigo lo más pronto posible.",
+                    "button": "📲 Mandar Whatsapp"
+                }
+            }
+        }
     },
     "get_started": {
         "welcome": "Hola {{userName}}, bienvenid@ a De Piso en Piso! Me llamo Pisito 🤖 i te ayudaré en lo que necesites.",

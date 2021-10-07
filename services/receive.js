@@ -90,10 +90,6 @@ module.exports = class Receive {
       let care = new Care(this.user, this.webhookEvent);
       response = care.handlePayload("CARE_BUSCANDO");
 
-    } else if (message.includes(('Última habitación').toLowerCase())) {
-      let care = new Care(this.user, this.webhookEvent);
-      response = care.handlePayload("CARE_LAST_ROOM");
-
     } else if (message.includes(i18n.__("ofering.title").toLowerCase())) {
       let care = new Care(this.user, this.webhookEvent);
       response = care.handlePayload("CARE_OFRECIENDO");
@@ -106,6 +102,15 @@ module.exports = class Receive {
       i18n.setLocale("es");
       response = Response.genCommonMenu();
 
+    } else if (message == i18n.__("others.title").toLowerCase()) {
+      let care = new Care(this.user, this.webhookEvent);
+      response = care.handlePayload("CARE_OTHERS");
+    } else if (message == i18n.__("others.options.joke.title").toLowerCase()) {
+      let care = new Care(this.user, this.webhookEvent);
+      response = care.handlePayload("CARE_JOKE");
+    } else if (message == i18n.__("others.options.human_contact.title").toLowerCase()) {
+      let care = new Care(this.user, this.webhookEvent);
+      response = care.handlePayload("CARE_CONTACT");
     } else if (this.user.firstMessage) {
       response = Response.genNuxMessage(this.user);
     } else {

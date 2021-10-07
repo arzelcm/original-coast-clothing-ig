@@ -26,7 +26,22 @@
         }
     },
     "ofering": {
-        "title": "Ofreciendo"
+        "title": "Ofreciendo",
+        "question": "¡Qué bien! ¿Se alquila una habitación (o varias) o se alquila el piso entero?",
+        "options": {
+            "flat": "Piso entero",
+            "room": "Una habitación",
+            "wrappers": {
+                "flat": {
+                    "text": "Si tienes un piso entero, tenemos un PLAN PERFECTO para ayudarte a alquilarlo. Envíanos un Whatsapp al (+34) 656 37 27 06 diciendo que tienes un piso entero o haz click aquí 👇",
+                    "button": "📝 Piso entero"
+                },
+                "room": {
+                    "text": "Haz clic en 📝Colgar Anuncio y se abrirá nuestra web. Si no estás registrado, deberás hacerlo y entonces podrás escribir tu anuncio, que saldrá en la web y en el muro de Facebook.",
+                    "button": "📝 Colgar Anuncio"
+                }
+            }
+        }
     },
     "others": {
         "title": "Otras opciones",

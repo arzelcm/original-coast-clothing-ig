@@ -26,7 +26,22 @@
         }
     },
     "ofering": {
-        "title": "Oferint"
+        "title": "Oferint",
+        "question": "Què bé! Es lloga una habitació (o varies) o es lloga el pis sencer?",
+        "options": {
+            "flat": "Pis sencer",
+            "room": "Una habitació",
+            "wrappers": {
+                "flat": {
+                    "text": "Si tens un pis sencer, tenim un PLA PERFECTE per ajudar-te a llogar-lo. Envia'ns un Whatsapp al (+34) 656 37 27 06 dient que tens un pis sencer o fes click aquí 👇",
+                    "button": "📝 Pis sencer"
+                },
+                "room": {
+                    "text": "Fes click a  📝 Penjar Anunci  i s'obrirà la nostra web. Si no estàs registrat, ho hauràs de fer i llavors podràs escriure el teu anunci, que sortirà a la web i al mur de Facebook.",
+                    "button": "📝 Penjar anunci"
+                }
+            }
+        }
     },
     "others": {
         "title": "Altres opcions",

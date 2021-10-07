@@ -68,11 +68,42 @@ module.exports = class Care {
         }])
         break;
       case "CARE_OFRECIENDO":
-        let ofreciendoUrl = "https://www.depisoenpiso.com/enviar-alojamiento.html?igsid=" + this.user.igsid;
+        /*let ofreciendoUrl = "https://www.depisoenpiso.com/enviar-alojamiento.html?igsid=" + this.user.igsid;
         response = Response.genGenericTemplate('https://www.depisoenpiso.com/new-assets/img/bg-alojamiento.jpg', 'Publica una habitación', '', [{
           "type": "web_url",
           "url": ofreciendoUrl,
           "title": "Publica ya"
+        }])*/
+
+        response = Response.genQuickReply(
+          i18n.__("ofering.question"),
+          [
+            {
+              title: i18n.__("ofering.options.room"),
+              payload: "CARE_ROOM"
+            },
+            {
+              title: i18n.__("ofering.options.flat"),
+              payload: "CARE_FLAT"
+            }
+          ]
+        );
+        break;
+
+      case "CARE_ROOM":
+        let roomUrl = "https://www.depisoenpiso.com/enviar-alojamiento.html?igsid=" + this.user.igsid + "&citid=6";
+        response = Response.genGenericTemplate('', i18n.__("ofering.options.room"), i18n.__("ofering.options.wrappers.room.text"), [{
+          "type": "web_url",
+          "url": roomUrl,
+          "title": i18n.__("ofering.options.wrappers.room.button")
+        }])
+        break;
+      case "CARE_FLAT":
+        let flatUrl = "https://depisenpis.typeform.com/to/sncMnwmc";
+        response = Response.genGenericTemplate('', i18n.__("ofering.options.flat"), i18n.__("ofering.options.wrappers.flat.text"), [{
+          "type": "web_url",
+          "url": flatUrl,
+          "title": i18n.__("ofering.options.wrappers.flat.button")
         }])
         break;
       case "CARE_OTHERS":

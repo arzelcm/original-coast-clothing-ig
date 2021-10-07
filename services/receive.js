@@ -117,6 +117,12 @@ module.exports = class Receive {
     } else if (message == i18n.__("searching.options.see").toLowerCase()) {
       let care = new Care(this.user, this.webhookEvent);
       response = care.handlePayload("CARE_BUSCANDO_SEE");
+    } else if (message == i18n.__("ofering.options.room").toLowerCase()) {
+      let care = new Care(this.user, this.webhookEvent);
+      response = care.handlePayload("CARE_ROOM");
+    } else if (message == i18n.__("ofering.options.flat").toLowerCase()) {
+      let care = new Care(this.user, this.webhookEvent);
+      response = care.handlePayload("CARE_FLAT");
     }  else if (this.user.firstMessage) {
       response = Response.genNuxMessage(this.user);
     } else {

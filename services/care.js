@@ -70,7 +70,7 @@ module.exports = class Care {
         break;
       case "CARE_OTHERS":
         response = Response.genQuickReply(
-          i18n.__("others.title"),
+          i18n.__("others.text"),
           [
             {
               title: i18n.__("others.options.joke.title"),
@@ -85,19 +85,7 @@ module.exports = class Care {
         break;
       case "CARE_JOKE":
         let randomIndex = Math.floor(Math.random() * i18n.__("others.options.joke.jokes.amount")); 
-        response = Response.genQuickReply(
-          i18n.__("others.options.joke.jokes." + randomIndex),
-          [
-            {
-              title: i18n.__("others.options.joke.title"),
-              payload: "CARE_JOKE"
-            },
-            {
-              title: i18n.__("others.options.human_contact.title"),
-              payload: "CARE_CONTACT"
-            }
-          ]
-        );
+        response = Response.genText(i18n.__("others.options.joke.jokes." + randomIndex));
         break;
       case "CARE_CONTACT":
         response = Response.genGenericTemplate('', i18n.__("others.options.human_contact.title"), i18n.__("others.options.human_contact.template.text"), [{

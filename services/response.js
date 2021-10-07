@@ -71,7 +71,6 @@ module.exports = class Response {
             {
               title: title,
               subtitle: subtitle,
-              image_url: image_url,
               buttons: buttons
             }
           ]

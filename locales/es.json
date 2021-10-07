@@ -20,6 +20,7 @@
     },
     "others": {
         "title": "Otras opciones",
+        "text": "Entonces, ¿quieres contactar con un humano? ¿o quieres probar mi magnífico humor 😜?",
         "options": {
             "joke": {
                 "title": "Chiste",
